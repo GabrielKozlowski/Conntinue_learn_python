@@ -63,52 +63,64 @@
 
 # class Cake:
 
+#     known_kinds = ['cake', 'waffle', 'meringue', 'biscuit', 'eclair', 'christmas', 'pretzel','other']
+#     bakery_offer = []
+
 #     def __init__(self, name, kind, taste, additves, filling) -> None:
 #         self.name = name
-#         self.kind = kind
+#         if kind in self.known_kinds:
+#             self.kind = "other" 
+#         else:
+#             self.kind = kind
 #         self.taste = taste
 #         self.additves = additves
 #         self.filling = filling
+#         Cake.bakery_offer.append(self)
 
 #     def show_info(self):
 #         print('{}'.format(self.name).upper())
+#         print('Kind: {}'.format(self.kind))
 #         print('Taste: {}'.format(self.taste))
 #         if len(self.additves) > 0:
-#                 print('Additves: \n\t{}'.format(self.additves))
-        
-#         print('Filling: {}'.format(self.filling))
+#             print('Additves: \n\t{}'.format(self.additves))
+#         else:
+#             print('Additves: \n\t')
+#         if len(self.filling) > 0:
+#             print('Filling: \n\t{}'.format(self.filling))
+#         else:
+#             print('Filling: ')
 
 #     def set_filling(self, filling):
 #         self.filling += filling
 
 #     def add_additives(self, additves):
-#         self.additves += '\n\t' + additves 
+#         self.additves += additves 
         
 
 
 # cake_1 = Cake('Apple_pie', 'cake with apples', 'apple', 'castor sugar', '')
 # cake_2 = Cake('Pickaninny_pie', 'black cake', 'cacao', 'icing', 'chocolade')
 # cake_3 = Cake('Chocolade Muffin','muffin', 'chocolade', 'chocolade', '')
+# cake_4 = Cake('Cocoa waffle','waffle','cocoa', '','cocoa')
+
 # print('-'* 50)
 
-# cake_1.show_info()
+
+# for c in Cake.bakery_offer:
+#     Cake.show_info(c)
+#     print()
 # print('-'* 50)
-# cake_2.show_info()
+# print(isinstance(cake_1, Cake))
 # print('-'* 50)
-# cake_1.set_filling('apples')
-# cake_1.set_filling('crumble')
-# cake_1.show_info()
+# print(type(cake_1))
 # print('-'* 50)
-# cake_1.add_additives('cinnamon')
-# cake_1.add_additives('brown sugar')
-# cake_2.add_additives('nuts')
-# cake_3.add_additives('cream')
-# cake_1.show_info()
-# print()
-# cake_2.show_info()
-# print()
-# cake_3.show_info()
+# print(vars(cake_1))
 # print('-'* 50)
+# print(vars(Cake))
+# print('-'* 50)
+# print(dir(cake_1))
+# print('-'* 50)
+# print(dir(Cake))
 
 # #****************************************************************
 
