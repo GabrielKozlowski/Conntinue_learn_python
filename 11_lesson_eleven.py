@@ -61,55 +61,71 @@
 
 
 
-# class Cake:
+class Cake:
 
-#     known_kinds = ['cake', 'waffle', 'meringue', 'biscuit', 'eclair', 'christmas', 'pretzel','other']
-#     bakery_offer = []
+    known_kinds = ['cake', 'waffle', 'meringue', 'biscuit', 'eclair', 'christmas', 'pretzel','other']
+    bakery_offer = []
 
-#     def __init__(self, name, kind, taste, additves, filling) -> None:
-#         self.name = name
-#         if kind in self.known_kinds:
-#             self.kind = "other" 
-#         else:
-#             self.kind = kind
-#         self.taste = taste
-#         self.additves = additves
-#         self.filling = filling
-#         Cake.bakery_offer.append(self)
 
-#     def show_info(self):
-#         print('{}'.format(self.name).upper())
-#         print('Kind: {}'.format(self.kind))
-#         print('Taste: {}'.format(self.taste))
-#         if len(self.additves) > 0:
-#             print('Additves: \n\t{}'.format(self.additves))
-#         else:
-#             print('Additves: \n\t')
-#         if len(self.filling) > 0:
-#             print('Filling: \n\t{}'.format(self.filling))
-#         else:
-#             print('Filling: ')
+    def __init__(self, name, kind, taste, additves, filling, gluten_free) -> None:
+        self.name = name
+        if kind in self.known_kinds:
+            self.kind = "other" 
+        else:
+            self.kind = kind
+        self.taste = taste
+        self.additves = additves
+        self.filling = filling
+        self.__gluten_free = gluten_free
+        Cake.bakery_offer.append(self)
 
-#     def set_filling(self, filling):
-#         self.filling += filling
+    def show_info(self):
+        print('{}'.format(self.name).upper())
+        print('Kind: {}'.format(self.kind))
+        print('Taste: {}'.format(self.taste))
+        if len(self.additves) > 0:
+            print('Additves: \n\t{}'.format(self.additves))
+        else:
+            print('Additves: \n\t')
+        if len(self.filling) > 0:
+            print('Filling: \n\t{}'.format(self.filling))
+        else:
+            print('Filling: ')
+        print('Glutten free: {}'.format(self.__gluten_free))
 
-#     def add_additives(self, additves):
-#         self.additves += additves 
+    def set_filling(self, filling):
+        self.filling += filling
+
+    def add_additives(self, additves):
+        self.additves += additves 
         
 
 
-# cake_1 = Cake('Apple_pie', 'cake with apples', 'apple', 'castor sugar', '')
-# cake_2 = Cake('Pickaninny_pie', 'black cake', 'cacao', 'icing', 'chocolade')
-# cake_3 = Cake('Chocolade Muffin','muffin', 'chocolade', 'chocolade', '')
-# cake_4 = Cake('Cocoa waffle','waffle','cocoa', '','cocoa')
+cake_1 = Cake('Apple_pie', 'cake with apples', 'apple', 'castor sugar', '', False)
+cake_2 = Cake('Pickaninny_pie', 'black cake', 'cacao', 'icing', 'chocolade', False)
+cake_3 = Cake('Chocolade Muffin','muffin', 'chocolade', 'chocolade', '', False)
+cake_4 = Cake('Cocoa waffle','waffle','cocoa', '','cocoa', False)
 
-# print('-'* 50)
+print('-'* 50)
 
 
-# for c in Cake.bakery_offer:
-#     Cake.show_info(c)
-#     print()
-# print('-'* 50)
+
+
+
+
+for c in Cake.bakery_offer:
+    Cake.show_info(c)
+    print()
+print('-'* 50)
+
+cake_1.__gluten_free=True
+Cake.show_info(cake_1)
+print('$'* 40)
+cake_1._Cake__gluten_free=True
+Cake.show_info(cake_1)
+
+
+# # Shows info of object
 # print(isinstance(cake_1, Cake))
 # print('-'* 50)
 # print(type(cake_1))
