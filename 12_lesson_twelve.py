@@ -1,5 +1,5 @@
 import pickle
-
+import glob
 
 class Cake:
 
@@ -58,7 +58,7 @@ class Cake:
     
     Text = property(__get_text, __set_text, None, 'Text changed')
 
-     
+
     def save_to_file(self,path):
         with open(path, 'wb') as f:
             pickle.dump(self,f)
@@ -67,12 +67,14 @@ class Cake:
     def read_from_file(cls,path):
         with open(path, 'rb') as f:
             newObject = pickle.load(f)
-
-            Cake.bakery_offer.append(newObject)
-
+            cls.bakery_offer.append(newObject)
             return newObject
 
-
+    @staticmethod
+    def get_bakery_file(catalogName):
+        return glob.glob(catalogName + '*.bakery')
+        
+   
         
         
 
@@ -98,3 +100,6 @@ for c in Cake.bakery_offer:
 print('-+'* 50)
 cake_5 = Cake.read_from_file('./cake1.bakery')
 Cake.show_info(cake_5)
+
+print()
+print(Cake.get_bakery_file('./'))
