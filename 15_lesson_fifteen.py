@@ -59,7 +59,7 @@
 #     with open(file_path, "wb") as f: 
 #         f.write(r.content)
  
-# # url = 'http://www.mobilo24.eu/spis/'
+# url = 'http://www.mobilo24.eu/spis/'
 # dir = 'c:/temp/'
 # tmpfile = 'download.tmp'
 # file = 'spis.html'
@@ -73,22 +73,35 @@
 #         print(f"Removing {tmpfile_path}")
 #         os.remove(tmpfile_path)
 #     else:
-#         print(f"Downloading url {url}")
+#         print(f"-Downloading url {url}")
 #         save_url_to_file(url, tmpfile_path)
 
-#         print(f"Copying file {tmpfile_path} - {file_path}")
+#         print(f"-Copying file {tmpfile_path} - {file_path}")
 #         shutil.copy(tmpfile_path, file_path)
 
+# except requests.exceptions.ConnectionError as e:
+#     print(f"Error: The url is incorrect ({url}) ")
+
+# except PermissionError as e:
+#     print(f"Error: File {file_path} must by open with write opsions")
+
+# except FileNotFoundError as e:
+#     print(f"Error: Canot copy, file {tmpfile} does not exist")
+
 # except Exception as e:
-#     print(f"Error download the URL {url}")
 #     print(f"Error details: {e}")
 
 # else:
-#     print(f"Succesfull Download url and copy files")
+#     print(f"-Succesfull Download url and copy files")
 
 # finally:
 #     if os.path.exists(tmpfile_path):
-#         print(f"Final removal of the file {tmpfile_path}")
+#         print(f"-Final removal of the file {tmpfile_path}")
 #         os.remove(tmpfile_path)
 
-# #******************************************************************************************
+#******************************************************************************************
+
+
+
+
+
