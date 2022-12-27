@@ -71,6 +71,3 @@ except Exception as e:
     print('THERE ARE ERRORS')
     print(e)
     print('THE OFFER CANNOT BE PUBLISHED')
-
-
-
