@@ -84,3 +84,26 @@
 
 # prime_numbers = it.islice(it.filterfalse(lambda x: check_if_has_dividers(x), range(10000000)), 10)
 # print(list(prime_numbers))
+# #***********************************************************************************************************
+
+# def prime_numbers(rangeOfNumbers):
+    
+#     prim = []
+#     for number in range(2, rangeOfNumbers + 1):
+#         isPrime = True
+#         for num in range(2, number):
+#             if number % num == 0:
+#                 isPrime = False
+        
+#         if isPrime:
+#             prim.append(number)
+
+#     yield prim
+
+
+# range_of_numbers = 100
+
+# print("Prime numbers out of {} are: \n{}".format(range_of_numbers, list(prime_numbers(range_of_numbers))))
+
+# #*******************************************************************************
+
