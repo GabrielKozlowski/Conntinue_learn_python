@@ -25,38 +25,81 @@
 
 # #*****************************************************************
 
-import os
-import zipfile
-import requests
+# import os
+# import zipfile
+# import requests
 
-class FileFromWeb():
+# class FileFromWeb():
 
-    def __init__(self, url, tmp_file):
+#     def __init__(self, url, tmp_file):
 
-        self.url = url
-        self.tmp_file = tmp_file
+#         self.url = url
+#         self.tmp_file = tmp_file
 
 
-    def __enter__(self):
-        response = requests.get(self.url)
-        with open(self.tmp_file, 'wb') as file:
-            file.write(response.content)
-        return self
+#     def __enter__(self):
+#         response = requests.get(self.url)
+#         with open(self.tmp_file, 'wb') as file:
+#             file.write(response.content)
+#         return self
 
     
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        pass
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+         
+#         if exc_type == FileNotFoundError:     
+#             print(f"Exc_type: {exc_type}")
+#             return True
 
+#         elif exc_type == NameError:
+#             print(f"Exc_type: {exc_type}")
+#             return True
+#         else:
+#             return False
+        
 
+# with FileFromWeb('https://www.ecb.europa.eu/stats/eurofxref/eurofxref.zip', './euroxref.zip' ) as f:
+#     with zipfile.ZipFile(f.tmp_file, "r") as z:
+#         a_file = z.namelist()[0]
+#         os.chdir('./new_dir/')
+#         z.extract(a_file, '.', None)
 
-with FileFromWeb('https://www.ecb.europa.eu/stats/eurofxref/eurofxref.zip', './euroxref.zip' ) as f:
-    with zipfile.ZipFile(f.tmp_file, "r") as z:
-        a_file = z.namelist()[0]
-        print(a_file)
-        os.chdir('./new_dir/')
-        z.extract(a_file, '.', None)
+# #*****************************************************************
 
+# import os
+# import zipfile
+# import requests
+# import contextlib
+ 
 
+ 
+# class FileFromWeb:
+ 
+#     def __init__(self, url, tmp_file):
+#         self.url = url
+#         self.tmp_file = tmp_file
+ 
+#     def download_file(self):
+#         response = requests.get(self.url)
+#         with open(self.tmp_file, 'wb') as f:
+#             f.write(response.content)
+#         return self
+ 
+#     def close(self):
+#         # if os.path.isfile(self.tmp_file):
+#         #     os.remove(self.tmp_file)
+#         pass
 
+# with contextlib.suppress(FileNotFoundError):
 
+#     with contextlib.closing(FileFromWeb('https://www.ecb.europa.eu/stats/eurofxref/eurofxref.zip', './new_dir/euroxref1.zip')) as f:
+#         f.download_file()
+    
+#         with zipfile.ZipFile(f.tmp_file, 'r') as z:
+#             a_file = z.namelist()[0]
+#             print(a_file)
+#             os.chdir('./new_dir')
+#             z.extract(a_file, '.', None)
+        
+#             os.remove(f.tmp_file)
 
+# #*****************************************************************
