@@ -1,3 +1,0 @@
-
-Action FILE_DELETE executed on C:/Users/FiFka9/Desktop/Nauka IT/Udemy/Py_dla_srednio_zaawansowanych/test.txt on 2022-12-03 20:08:40
-Action FILE_DELETE executed on C:/Users/FiFka9/Desktop/Nauka IT/Udemy/Py_dla_srednio_zaawansowanych/test.txt on 2022-12-03 20:08:40

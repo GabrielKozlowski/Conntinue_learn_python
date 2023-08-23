@@ -1,3 +1,4 @@
+
 # a = b = c = 10
 
 # print(a,id(a),b,id(b),c,id(c))
@@ -67,23 +68,23 @@
 #             print('You must choice a good number')
 
 
-import os
+# import os
 
 
-plik = open('./plik.txt')
+# plik = open('./plik.txt')
 
-def countWordsInText(parametr):
-    sample = parametr.read().split(' ')
-    words = len(sample)
-    return words
+# def countWordsInText(parametr):
+#     sample = parametr.read().split(' ')
+#     words = len(sample)
+#     return words
     
 
-path = './plik.txt'
+# path = './plik.txt'
 
-if os.path.isfile(path): 
-    number = countWordsInText(plik)
-    print(number)
+# if os.path.isfile(path): 
+#     number = countWordsInText(plik)
+#     print(number)
 
 
 
-os.path.isfile(path) and print(f'There are {number} words in the file "{path}"')
+# os.path.isfile(path) and print(f'There are {number} words in the file "{path}"')
